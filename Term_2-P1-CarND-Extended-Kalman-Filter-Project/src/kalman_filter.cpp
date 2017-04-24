@@ -77,7 +77,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 VectorXd radar_Prediction(const VectorXd &x_state)
 {
    VectorXd z_radar;
-   z_radar = VectorXd(4);
+   z_radar = VectorXd(3);
 
    // recover state parameter
    double px = x_state(0);
