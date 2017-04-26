@@ -1,5 +1,7 @@
 #include "kalman_filter.h"
 
+#define PI 3.14159265
+
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
@@ -34,9 +36,10 @@ void KalmanFilter::Update(const VectorXd &z) {
   /**
   TODO:
     * update the state by using Kalman Filter equations
-  */
+  */  
    
   VectorXd z_pred = H_ * x_;
+//  z_pred = atan2(z_pred, -z_pred) * 180 / PI;
   VectorXd y = z - z_pred;
   MatrixXd Ht = H_.transpose();
   MatrixXd S = H_ * P_ * Ht + R_; 
@@ -59,12 +62,20 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   */
 
   VectorXd z_pred = radar_Prediction(x_);
+//z_pred = atan2(z_pred, -z_pred) * 180 / PI;
   VectorXd y = z - z_pred;
+
+   while(y[1] > PI || y[1] < -PI)
+   {
+	if(y[1] > PI)
+       		 y[1]-=PI;
+        else y[1]+=PI;
+   }
+
   MatrixXd Ht = H_.transpose();
-  MatrixXd S = H_ * P_ * Ht + R_;
-  MatrixXd Si = S.inverse();
   MatrixXd PHt = P_ * Ht;
-  MatrixXd K = PHt *Si;
+  MatrixXd S = H_ * PHt + R_;
+  MatrixXd K = PHt * S.inverse();
 
   // new estimate
   x_ = x_ + (K * y);
@@ -76,8 +87,8 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 
 VectorXd radar_Prediction(const VectorXd &x_state)
 {
-   VectorXd z_radar;
-   z_radar = VectorXd(3);
+   VectorXd z_radar(3);
+   double rho, phi, rho_dot;
 
    // recover state parameter
    double px = x_state(0);
@@ -85,17 +96,21 @@ VectorXd radar_Prediction(const VectorXd &x_state)
    double vx = x_state(2);
    double vy = x_state(3);
 
-   z_radar(0) = sqrt(px*px +py*py);
+   rho = sqrt(px*px +py*py);
 
-   z_radar(1) = atan2(py, px);
+   phi = atan2(py ,px);
 
-   if(z_radar(0) < .0001) {
-        z_radar(2) = (px*vx + py*vy)/0.0001;
+   if(fabs(rho) < .0001) {
+        rho_dot = (px*vx + py*vy) / 0.0001;
    }
    else {
-        z_radar(2) = (px*vx + py*vy)/z_radar(0);
+        rho_dot = (px*vx + py*vy) / rho;
    }
+
+   z_radar << rho, phi, rho_dot;
 
    return z_radar;
 }
 
+
+//hx[2] = (px*vx + py*vy)/max(.0001,hx[0]);
