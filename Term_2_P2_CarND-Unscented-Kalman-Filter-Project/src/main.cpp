@@ -207,8 +207,8 @@ int main(int argc, char* argv[]) {
     // convert ukf x vector to cartesian to compare to ground truth
     VectorXd ukf_x_cartesian_ = VectorXd(4);
 
-    float x_estimate_ = ukf.x_(0);
-    float y_estimate_ = ukf.x_(1);
+    float x_estimate_  = ukf.x_(0);
+    float y_estimate_  = ukf.x_(1);
     float vx_estimate_ = ukf.x_(2) * cos(ukf.x_(3));
     float vy_estimate_ = ukf.x_(2) * sin(ukf.x_(3));
     

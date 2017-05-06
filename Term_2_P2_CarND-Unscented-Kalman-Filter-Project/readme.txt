@@ -25,10 +25,3 @@ PROJECT GRADING
 - I recommend a hall of fame for the lowest overall RMSE using laser AND radar.
 - I recommend to ask students to improve the initialization procedure and evaluate the RMSE during the first 20 steps.
 
-
-
-
-
-
-
-
