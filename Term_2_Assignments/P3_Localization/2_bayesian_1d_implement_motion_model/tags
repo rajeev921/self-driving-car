@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BAYESIANFILTER_H_	bayesianFilter.h	8;"	d
+HELP_FUNCTIONS_H_	help_functions.h	8;"	d
+MAP_H_	map.h	5;"	d
+MEASUREMENT_PACKAGE_H_	measurement_package.h	6;"	d
+MeasurementPackage	measurement_package.h	/^class MeasurementPackage {$/;"	c
+ONE_OVER_SQRT_2PI	help_functions.h	/^	float ONE_OVER_SQRT_2PI = 1\/sqrt(2*M_PI) ;$/;"	m	class:help_functions
+bayesianFilter	bayesianFilter.cpp	/^bayesianFilter::bayesianFilter() {$/;"	f	class:bayesianFilter
+bayesianFilter	bayesianFilter.h	/^class bayesianFilter {$/;"	c
+bel_x	bayesianFilter.h	/^	std::vector<float> bel_x ;$/;"	m	class:bayesianFilter
+compare_data	help_functions.h	/^	inline bool compare_data(std::string filename_gt,$/;"	f	class:help_functions
+control_s	measurement_package.h	/^	struct control_s{$/;"	s	class:MeasurementPackage
+control_s_	measurement_package.h	/^	control_s control_s_;$/;"	m	class:MeasurementPackage
+delta_x_f	measurement_package.h	/^		float delta_x_f;     \/\/ move to successor in x position$/;"	m	struct:MeasurementPackage::control_s
+distance_f	measurement_package.h	/^		std::vector <float> distance_f;  \/\/ distance to observed landmark$/;"	m	struct:MeasurementPackage::observation_s
+help_functions	help_functions.h	/^class help_functions {$/;"	c
+id_i	map.h	/^		int id_i ;$/;"	m	struct:map::single_landmark_s
+landmark_list	map.h	/^	std::vector<single_landmark_s> landmark_list ;$/;"	m	class:map
+main	main.cpp	/^int main() {$/;"	f
+map	map.h	/^class map {$/;"	c
+normalize_vector	help_functions.h	/^	std::vector<float> normalize_vector(std::vector<float> inputVector){$/;"	f	class:help_functions
+normpdf	help_functions.h	/^	float normpdf(float x, float mu, float std) {$/;"	f	class:help_functions
+observation_s	measurement_package.h	/^	struct observation_s{$/;"	s	class:MeasurementPackage
+observation_s_	measurement_package.h	/^	observation_s observation_s_ ;$/;"	m	class:MeasurementPackage
+process_measurement	bayesianFilter.cpp	/^void bayesianFilter::process_measurement(const MeasurementPackage &measurements,$/;"	f	class:bayesianFilter
+read_map_data	help_functions.h	/^	inline bool read_map_data(std::string filename, map& map) {$/;"	f	class:help_functions
+read_measurement_data	help_functions.h	/^	inline bool read_measurement_data(std::string filename_control,$/;"	f	class:help_functions
+single_landmark_s	map.h	/^	struct single_landmark_s{$/;"	s	class:map
+squared	help_functions.h	/^	float squared(float x)$/;"	f	class:help_functions
+x_f	map.h	/^		float x_f;$/;"	m	struct:map::single_landmark_s
+~bayesianFilter	bayesianFilter.cpp	/^bayesianFilter::~bayesianFilter() {$/;"	f	class:bayesianFilter

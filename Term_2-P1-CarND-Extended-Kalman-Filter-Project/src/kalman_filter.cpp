@@ -109,7 +109,7 @@ VectorXd radar_Prediction(const VectorXd &x_state)
    }
 
    z_radar << rho, phi, rho_dot;
-   cout <<"\n Z_radar info\t " << rho << "\t" << phi << "\t" << rho_dot <<"\n";
+   //cout <<"\n Z_radar info\t " << rho << "\t" << phi << "\t" << rho_dot <<"\n";
    return z_radar;
 }
 
