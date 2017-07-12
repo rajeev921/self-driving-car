@@ -1,0 +1,25 @@
+In this quiz we will use Examples "02","03","04" which are set in main.cpp by example_string
+
+Forward direction is to the right in the map
+
+Example "02":
+    Move 1 forward,
+    Observe landmark 4.5 forward,
+    Move 13 forward
+Example "03":
+    Move 1 forward,
+    Observe landmark 4.5 forward,
+    Move 6 forward,
+    Observe landmark 28 forward,
+    Move 1 forward,
+    Observe landmark 27 forward,
+    Move 1 forward,
+    Observe landmark 26 forward,
+    Move 1 forward,
+    Observe landmark 25 forward,
+    Move 4 forward
+Example "04":
+    Move 1 forward,
+    Observe landmark 4.5 forward,
+    Observe landmark 32 forward,
+    Move 13 forward
