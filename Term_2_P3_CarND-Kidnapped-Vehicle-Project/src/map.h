@@ -21,7 +21,7 @@ public:
 	std::vector<single_landmark_s> landmark_list ; // List of landmarks in the map
 
 };
-
+ 
 
 
 #endif /* MAP_H_ */
