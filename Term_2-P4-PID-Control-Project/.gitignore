@@ -2,3 +2,5 @@
 build
 tags
 .editorconfig
+install-mac.sh
+install-ubuntu.sh
